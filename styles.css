@@ -1,0 +1,758 @@
+/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+button {
+    background-color: #FFD700; /* Gold */
+    border: none;
+    color: #000; /* Black */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e6c200; /* Darker Gold */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000080;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header stays on top of other elements */
+    box-sizing: border-box;
+}
+
+.logo img {
+    width: 150px; /* Adjust logo size */
+}
+
+/* General link styles */
+.menu-icon {
+    display: none; /* Hidden on larger screens */
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Desktop menu styles */
+ul.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav-links li {
+    margin-left: 20px;
+}
+
+/* Mobile view - menu icon and hidden menu */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show the hamburger icon */
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Hide the menu initially */
+    ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000080;
+        position: fixed;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        z-index: 100;
+        padding: 10px;
+        max-height: calc(100vh - 60px); /* Set the maximum height */
+        overflow-y: auto; /* Allow scrolling if the menu is too long */
+    }
+
+    ul.nav-links.show {
+        display: flex; /* Show the menu */
+    }
+
+    ul.nav-links li {
+        margin: 10px 0;
+    }
+
+    ul.nav-links li a:hover {
+        color: #FFD700;
+    }
+}
+
+/* Showcase Section */
+#showcase {
+    background-image: url('images/showcase.jpg'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+#showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 75% opacity */
+    z-index: 1;
+}
+
+.showcase {
+    max-width: 1000px; /* Limit the width of the entire showcase content */
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.showcase h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.showcase p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* About Preview */
+#about-preview {
+    background-color: #000080; /* Navy Blue */
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+#about-preview p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#about-preview button {
+    background-color: #FFD700; /* Gold */
+    color: #000; /* Black */
+}
+
+/* Services Preview Section */
+#services-preview {
+    padding: 50px;
+    text-align: center;
+    background-color: #f5f5f5; /* Light background color */
+}
+
+#services-preview h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Grid layout for services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Individual service cards */
+.service {
+    
+    padding: 20px;
+    
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    text-align: center;
+}
+
+.service i {
+    font-size: 3rem;
+    color: #000080; /* Navy color for the icons */
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Hover effect */
+.service:hover {
+    transform: translateY(-10px); /* Elevates the card on hover */
+}
+
+/* Button styles */
+#services-preview button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #000080; /* Navy blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#services-preview button:hover {
+    background-color: #FFD700; /* Gold color on hover */
+    color:#000;
+}
+
+/* Why Choose Us Section */
+#choose-us {
+    background-color: white;
+    color: #000;
+    padding: 40px;
+    text-align: center;
+}
+
+#choose-us ul {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+#choose-us ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#choose-us button {
+    background-color: #FFD700; /* Gold */
+    color: #000; /* Black */
+}
+
+/* Footer container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background-color: #000;
+    color: white;
+}
+
+.footer-container > div {
+    flex: 1 1 200px;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+}
+
+.footer-links h4,
+.footer-social h4,
+.footer-contact h4 {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Social media icons */
+.footer-social a {
+    color: white;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #FFD700; /* Change color on hover */
+}
+
+.footer-contact p {
+    margin: 8px 0;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+/* Footer bottom text */
+.footer-bottom {
+    background-color: #000; 
+    text-align: center;
+    padding: 2px 0;
+    color: white;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-social,
+    .footer-links,
+    .footer-contact {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-social a {
+        font-size: 1.2rem;
+    }
+
+    .footer-logo img {
+        max-width: 120px;
+    }
+}
+
+/* hero styles */
+#hero {
+    position: relative;
+    background-image: url('images/showcase.jpg'); /* Replace with the correct image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 300px; /* Ensure the hero has a minimum height */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* 75% overlay */
+    z-index: 1; /* Ensure overlay is behind the content */
+}
+
+.hero {
+    position: relative;
+    z-index: 2; /* Keeps content above the veil */
+    max-width: 1000px; /* Max width for larger screens */
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center the hero container */
+    display: flex; /* Flexbox for centering content */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text inside is centered */
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2rem; /* Adjust font size for visibility */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Take full width of container */
+    padding: 10px 0;
+    text-align: center; /* Ensure the text is centered */
+    max-width: 80%; /* Limit paragraph width for readability */
+}
+
+
+
+/* About Section */
+#about {
+    background-color: #fff; 
+    padding: 40px 20px;
+    color: #333; /* White text */
+    text-align: center; /* Center the content */
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* Mission, Vision, Values Section */
+#mission-vision-values {
+    background-color: #000080;
+    color: #fff;
+    text-align: center; /* Centered text for emphasis */
+    padding: 20px 20px;
+}
+
+#mission-vision-values h2 {
+    font-size: 2.2rem;
+    color: #FFD700; /* Navy blue headings */
+    margin-bottom: 20px;
+}
+
+#mission-vision-values p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+#mission-vision-values ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+#mission-vision-values ul li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+#mission-vision-values ul li strong {
+    color: gold; /* Gold color for the strong text */
+}
+
+/* Experience Section */
+#experience {
+    background-color: white; /* White background */
+    color: #333;
+    text-align: center;
+}
+
+#experience h2 {
+    font-size: 2.5rem;
+    color: #000080; /* Navy blue for the heading */
+    margin-bottom: 20px;
+}
+
+#experience p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* Why Choose Us Section */
+#why-choose-us {
+    background-color: #000080; /* Navy blue background */
+    padding: 40px 20px;
+    color: white; /* White text */
+    text-align: center;
+}
+
+#why-choose-us h2 {
+    font-size: 2.5rem;
+    color: gold; /* Gold for the heading */
+    margin-bottom: 20px;
+}
+
+#why-choose-us ul {
+    list-style-type: none; /* No bullets */
+    padding: 0;
+}
+
+#why-choose-us ul li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: white; /* White text for list items */
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p, ul li {
+        font-size: 1rem;
+    }
+}
+
+/* Services Section */
+#services {
+    /* background-color: #f4f4f4;  */
+    padding: 40px 20px;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 40px; /* Space between service items */
+}
+
+.service-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h2 {
+    color: #000080; /* Navy blue for the headings */
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Make the heading text gold */
+.service-item h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: gold; /* Gold underline effect */
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center container */
+    padding: 0 20px; /* Responsive padding */
+    margin-bottom: 60px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .service-item {
+        text-align: left;
+    }
+}
+
+/* CTA Section */
+#cta {
+    background-color: #000080; /* Navy blue background */
+    padding: 40px 20px;
+    text-align: center;
+    color: white; /* White text for contrast */
+}
+
+#cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: gold; /* Gold for the heading */
+}
+
+#cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: white; /* White text for readability */
+}
+
+#cta button {
+    background-color: gold; /* Gold button to stand out */
+    color: #000080; /* Navy blue text */
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cta button:hover {
+    background-color: white; /* Change button to white on hover */
+    color: #000080; /* Navy blue text on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    #cta h2 {
+        font-size: 2rem;
+    }
+
+    #cta p {
+        font-size: 1rem;
+    }
+
+    #cta button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Contact Section */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Responsive stacking */
+    justify-content: space-between;
+    background-color: #fff; /* Light background */
+    padding: 50px 20px;
+    color: #333;
+    gap: 15px; /* Adds spacing between the two sections */
+}
+
+.contact-info {
+    flex-basis: 40%; /* Allocating width for larger screens */
+}
+
+.contact-info h2 {
+    font-size: 1.4rem;
+    color: #000080; /* Navy blue */
+    margin-bottom: 20px; 
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    margin-right: 10px;
+    color: #FFD700; /* Matching the theme color */
+    font-size: 1.5rem;
+}
+
+/* Contact Form */
+.contact-form {
+    flex-basis: 50%; /* Adjusting width for form */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form fields */
+}
+
+.contact-form h2 {
+    font-size: 1.4rem;
+    color: #000080; /* Navy blue */
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    padding: 15px 20px;
+    background-color: #FFD700; /* Matching the theme color */
+    border: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.contact-form button:hover {
+    color: #FFD700;
+    background-color: #000080; /* Darker hover color */
+}
+
+/* Map Section */
+#map {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#map h2 {
+    font-size: 1.4rem;
+    color: #000080;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        flex-basis: 100%; /* Full width on smaller screens */
+        max-width: 500px; /* Prevents too wide forms */
+    }
+
+    .contact-info p {
+        justify-content: left;
+    }
+}
