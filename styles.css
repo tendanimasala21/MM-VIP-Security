@@ -277,8 +277,31 @@ ul.nav-links li {
     margin-bottom: 15px;
 }
 
+.footer-logo {
+    text-align: left;  /* Aligns the logos to the left */
+    margin-bottom: 20px; /* Adds space between the logos and the rest of the footer */
+}
+
 .footer-logo img {
-    max-width: 150px;
+    display: block;      /* Ensures the images are treated as block elements */
+    margin: 0;           /* Removes any automatic centering */
+    max-width: 150px;    /* Adjust the size of the logos as necessary */
+    height: auto;        /* Keeps the proportions of the logos */
+}
+
+.footer-logo a {
+    display: block;
+    margin-top: 10px;    /* Adds a bit of space between the company logo and Psira logo */
+}
+
+.psira-logo img {
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .psira-logo img {
+        max-width: 100px;  /* Smaller width on mobile */
+    }
 }
 
 .footer-links h4,
@@ -357,7 +380,6 @@ ul.nav-links li {
     }
 }
 
-/* hero styles */
 #hero {
     position: relative;
     background-image: url('images/showcase.jpg'); /* Replace with the correct image path */
@@ -370,7 +392,7 @@ ul.nav-links li {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 300px; /* Ensure the hero has a minimum height */
+    min-height: calc(100vh - 350px);
 }
 
 #hero::before {
@@ -412,7 +434,11 @@ ul.nav-links li {
     max-width: 80%; /* Limit paragraph width for readability */
 }
 
-
+@media (max-width: 768px) {
+    #hero {
+        min-height: calc(100vh - 280px); /* Adjust if the header size changes on smaller screens */
+    }
+}
 
 /* About Section */
 #about {
