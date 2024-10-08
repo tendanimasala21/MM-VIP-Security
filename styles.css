@@ -88,7 +88,7 @@ ul.nav-links li {
         width: 100%;
         background-color: #000080;
         position: fixed;
-        top: 60px; /* Adjust based on your header height */
+        top: 100px; /* Adjust based on your header height */
         left: 0;
         z-index: 100;
         padding: 10px;
